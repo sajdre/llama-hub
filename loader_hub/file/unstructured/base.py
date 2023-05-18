@@ -31,7 +31,7 @@ class UnstructuredReader(BaseReader):
         split_documents: Optional[bool] = False,
     ) -> List[Document]:
         """Parse file."""
-        from unstructured.partition.auto import partition
+        from unstructured.partition.pdf import partition_pdf
 
         elements = partition_pdf(str(file), ocr_languages="rus")
         text_chunks = [" ".join(str(el).split()) for el in elements]
