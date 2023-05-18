@@ -33,7 +33,7 @@ class UnstructuredReader(BaseReader):
         """Parse file."""
         from unstructured.partition.auto import partition
 
-        elements = partition(str(file), ocr_languages="rus")
+        elements = partition_pdf(str(file), ocr_languages="rus")
         text_chunks = [" ".join(str(el).split()) for el in elements]
 
         if split_documents:
